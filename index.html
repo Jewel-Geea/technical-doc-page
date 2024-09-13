@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Javascript</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main id="main-doc">
+      <div class="nav">
+        <nav id="navbar">
+          <header>Javascript Documentation</header>
+          <ul class="jump">
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li>
+              <a class="nav-link" href="#What_You_Should_Already_Know"
+                >What You Should Already Know</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#JavaScript_vs_Java"
+                >JavaScript vs Java</a
+              >
+            </li>
+            <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+            <li><a class="nav-link" href="#Variables">Variables</a></li>
+            <li>
+              <a class="nav-link" href="#Declaring_Variables"
+                >Declaring Variables</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#Variable_Scope">Variable Scope</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#Global_Variables">Global Variables</a>
+            </li>
+            <li><a class="nav-link" href="#Constants">Constants</a></li>
+            <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+            <li><a class="nav-link" href="#Control_Flow">Control Flow</a></li>
+            <li>
+              <a class="nav-link" href="#Function_Declarations"
+                >Function Declarations</a
+              >
+            </li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <section class="main-section" id="Introduction">
+        <header><h1>Introduction</h1></header>
+        <p>
+          JavaScript is a versatile, cross-platform, object-oriented scripting
+          language commonly used for web development. It is lightweight and
+          integrates well within host environments, such as web browsers, to
+          provide programmatic control over web page elements.<br />JavaScript
+          includes a standard library of objects like Array, Date, and Math, and
+          a fundamental set of language constructs including operators, control
+          structures, and statements. The core JavaScript language can be
+          extended for various applications through additional objects.
+        </p>
+        <ul>
+          <li>
+            <span>Client-side JavaScript:</span> Extends the core language to
+            manage browser behavior and the Document Object Model (DOM). This
+            allows manipulation of HTML elements, handling user interactions,
+            and responding to events like clicks and form submissions.
+          </li>
+          <li>
+            <span>Server-side JavaScript:</span> Expands JavaScript capabilities
+            for server environments, enabling database communication, session
+            management, and file operations on the server.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="What_You_Should_Already_Know">
+        <header><h1>What You Should Already Know</h1></header>
+        <p>This guide assumes you have:</p>
+        <ul>
+          <li>
+            A basic understanding of the Internet and the World Wide Web (WWW).
+          </li>
+          <li>Familiarity with HyperText Markup Language (HTML).</li>
+          <li>
+            Some programming experience. If you are new to programming, consider
+            exploring introductory JavaScript tutorials.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="JavaScript_vs_Java">
+        <header><h1>JavaScript vs Java</h1></header>
+        <p>
+          While JavaScript and Java share some similarities, they have
+          fundamental differences. JavaScript resembles Java in syntax but
+          differs in several key areas:
+        </p>
+        <ul>
+          <li>
+            <span>Typing:</span> JavaScript is dynamically typed and does not
+            enforce static type checking as Java does.
+          </li>
+          <li>
+            <span>Object Model:</span> JavaScript uses a prototype-based model,
+            providing dynamic inheritance, whereas Java uses a class-based model
+            with compile-time class definitions.
+          </li>
+          <li>
+            <span>Declaration:</span> JavaScript allows for a more flexible,
+            free-form approach without strict declarations for variables,
+            functions, or methods.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Hello_World">
+        <header><h1>Hello World</h1></header>
+        <p>
+          To begin with JavaScript, try writing a simple "Hello World" program:
+        </p>
+        <div class="code">
+          <pre><code>function greetMe(yourName) {
+  alert("Hello " + yourName);
+}
+greetMe("World");</code></pre>
+        </div>
+      </section>
+
+      <section class="main-section" id="Variables">
+        <header><h1>Variables</h1></header>
+        <p>
+          Variables in JavaScript are symbolic names for values. Identifiers
+          must start with a letter, underscore (_), or dollar sign ($), and can
+          include digits after the first character. JavaScript is
+          case-sensitive, allowing identifiers like <span>Number_hits</span>,
+          <span>temp99</span>, and <span>_name</span>
+        </p>
+      </section>
+
+      <section class="main-section" id="Declaring_Variables">
+        <header><h1>Declaring Variables</h1></header>
+        <p>You can declare variables in three ways:</p>
+        <div class="code">
+          <ul>
+            <li>
+              <pre><code>With var: var x = 42;</code></pre>
+              This syntax declares both local and global variables.
+            </li>
+            <li>
+              <pre><code>By Assignment: x = 42;</code></pre>
+              This creates a global variable and is generally discouraged.
+            </li>
+            <li>
+              <pre><code>With let: let y = 13;</code></pre>
+              This declares a block-scoped local variable.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="main-section" id="Variable_Scope">
+        <header><h1>Variable Scope</h1></header>
+        <p>
+          Variables declared outside any function are global, while those
+          declared within a function are local. JavaScript before ECMAScript
+          2015 had function scope, but with ECMAScript 2015, let introduced
+          block scope:
+        </p>
+        <div class="code">
+          <pre><code>if (true) {
+  var x = 5; // function or global scope
+}
+console.log(x); // 5
+
+if (true) {
+  let y = 5; // block scope
+}
+console.log(y); // ReferenceError: y is not defined
+</code></pre>
+        </div>
+      </section>
+
+      <section class="main-section" id="Global_Variables">
+        <header><h1>Global Variables</h1></header>
+        <p>
+          Global variables are properties of the global object (<span
+            >window</span
+          >
+          in browsers). You can access them using
+          <span>window.variable</span> and from different windows or frames
+          using syntax like <span>parent.phoneNumber</span>.
+        </p>
+      </section>
+
+      <section class="main-section" id="Constants">
+        <header><h1>Constants</h1></header>
+        <p>Use <span>const</span> to declare a read-only variable:</p>
+        <pre><code>const PI = 3.14;</code></pre>
+        <p>
+          Constants must be initialized at declaration and cannot be reassigned.
+          They follow the same scope rules as let variables.
+        </p>
+      </section>
+
+      <section class="main-section" id="Data_Types">
+        <header><h1>Data Types</h1></header>
+        <p>JavaScript defines seven data types:</p>
+        <ul>
+          <li>Primitive Types:</li>
+          <ul>
+            <li class="no-bold">Boolean: true, false</li>
+            <li class="no-bold">Null: null</li>
+            <li class="no-bold">Undefined: undefined</li>
+            <li class="no-bold">Number: 42, 3.14159</li>
+            <li class="no-bold">String: "Hello"</li>
+            <li class="no-bold">
+              Symbol (new in ECMAScript 2015): Unique and immutable
+            </li>
+          </ul>
+          <li>
+            <span>Object:</span> Used to store collections of data and more
+            complex entities.
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Control_Flow">
+        <header><h1>Control Flow</h1></header>
+        <ul id="control">
+          <li>
+            if...else Statement: Executes code based on a condition:
+            <pre><code>
+if (condition) {
+  statement_1;
+} else {
+  statement_2;
+}
+</code></pre>
+            You can chain multiple conditions with else if:
+            <pre><code>
+if (condition_1) {
+  statement_1;
+} else if (condition_2) {
+  statement_2;
+} else {
+  statement_last;
+}
+</code></pre>
+          </li>
+          <li>
+            while Statement: Repeats execution while a condition is true:
+            <pre><code>
+while (condition) {
+  statement;
+}
+</code></pre>
+            Example:
+            <pre><code>
+var n = 0;
+var x = 0;
+while (n < 3) {
+  n++;
+  x += n;
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Function_Declarations">
+        <header><h1>Function Declarations</h1></header>
+        <p>Define a function with the <span>function</span> keyword:</p>
+        <pre><code>
+function square(number) {
+  return number * number;
+}
+</code></pre>
+        <p>
+          Functions can take arguments and return values. Primitive values are
+          passed by value, while objects are passed by reference.
+        </p>
+      </section>
+
+      <section class="main-section" id="Reference">
+        <header><h1>Reference</h1></header>
+        <p>
+          This guide is adapted from MDN Web Docs, a comprehensive resource for
+          web developers. It provides detailed documentation on JavaScript and
+          other web technologies, making it an essential reference for both
+          beginners and experienced developers.
+        </p>
+        <p>
+          Additional information and examples were taken from the JavaScript
+          section of the official ECMAScript documentation, ensuring that the
+          content adheres to the latest language specifications and standards.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
